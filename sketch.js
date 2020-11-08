@@ -15,23 +15,23 @@ backImage = loadImage("farm.jpg");
 }
 
 function setup() {
-createCanvas(600,300);
+createCanvas(1200,600);
 //farm
-back = createSprite(400,150,10,10);
+back = createSprite(800,300,10,10);
 back.addImage("back", backImage);
-back.scale = 3;
-back.velocityX = -3;
+back.scale = 6;
+back.velocityX = -6;
   
 //pig
-pig = createSprite(50,260,10,10);
+pig = createSprite(100,520,10,10);
 pig.addImage("piglet", pigImage);
-pig.scale = 0.15;
+pig.scale = 0.30;
   
 //mud
 mudGroup = new Group();
 
 //ground
-ground = createSprite(300,300,900,10);
+ground = createSprite(600,600,1800,10);
 ground.visible = false;
 
 }
@@ -41,11 +41,11 @@ background("lightgrey");
   pig.collide(ground);
   pig.velocityY = pig.velocityY + 0.8;
   if(gameState === PLAY){
-    if(back.x < 190){
-      back.x = 400;
+    if(back.x < 380){
+      back.x = 800;
     }
-   if(keyDown("space")&& pig.y >= 250) {
-        pig.velocityY = -12;
+   if(keyDown("space")&& pig.y >= 500) {
+        pig.velocityY = -24;
     }
 spawnMud();
 drawSprites(); 
@@ -58,15 +58,15 @@ drawSprites();
   textSize(30);
   stroke("yellow");
   strokeWeight(2);
-  text("GameOver", 250,150);
+  text("GameOver", 500,300);
  }
 }
 function spawnMud(){
   if(frameCount% 120 === 0){
-    var mud = createSprite(600,280,20,20);
-    mud.velocityX = -4;
+    var mud = createSprite(1200,560,20,20);
+    mud.velocityX = -8;
     mud.addImage(mudImage);
-    mud.scale = 0.15;
+    mud.scale = 0.30;
     mud.setLifetime = 100;
     
 mudGroup.add(mud);
