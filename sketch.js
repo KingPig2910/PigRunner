@@ -24,7 +24,7 @@ back.velocityX = -6;
   
 //pig
 pig = createSprite(100,520,10,10);
-pig.addImage("piglet", pigImage);
+pig.addImage("monpig", pigImage);
 pig.scale = 0.30;
   
 //mud
