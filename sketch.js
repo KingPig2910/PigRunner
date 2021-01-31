@@ -9,7 +9,7 @@ var back, backImage;
 
 var invisibleGround;
 function preload(){
-pigImage = loadImage("piglet.png");
+pigImage = loadImage("brown monpig.png");
 mudImage = loadImage("mud.png");
 backImage = loadImage("farm.jpg");
 }
